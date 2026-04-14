@@ -1,0 +1,12 @@
+streamlit>=1.30.0
+streamlit-option-menu>=0.3.6
+requests>=2.31.0
+pandas>=2.1.0
+plotly>=5.18.0
+fastapi>=0.109.0
+uvicorn>=0.25.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+bcrypt>=4.1.2
+PyJWT>=2.8.0
+python-dotenv>=1.0.0
