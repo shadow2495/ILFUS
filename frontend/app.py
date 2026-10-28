@@ -1,5 +1,5 @@
 """
-SecureFileShare — Streamlit Frontend v2.0
+ILFUS — Streamlit Frontend v2.0
 Cyberpunk-styled blockchain file sharing dashboard
 """
 
@@ -23,7 +23,7 @@ except ImportError:
 API_BASE = os.getenv("API_BASE", "http://127.0.0.1:8000")
 
 st.set_page_config(
-    page_title="SecureFileShare · Blockchain Storage",
+    page_title="ILFUS · Blockchain Storage",
     page_icon="🔐",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -214,7 +214,7 @@ def page_login():
         st.markdown("""<div class="lcard" style="pointer-events:none">
             <div style="text-align:center;margin-bottom:1rem">
                 <div style="font-size:2.2rem">🔐</div>
-                <div style="font-size:1.4rem;font-weight:700;background:linear-gradient(90deg,#00d4ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">SecureFileShare</div>
+                <div style="font-size:1.4rem;font-weight:700;background:linear-gradient(90deg,#00d4ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent">ILFUS</div>
                 <div style="font-size:.75rem;color:#64748b">Blockchain-Encrypted File Vault</div>
             </div></div>""", unsafe_allow_html=True)
 
@@ -267,13 +267,13 @@ def page_login():
 # ─── TOP BAR ──────────────────────────────────────────────────────────────────
 def render_top_bar():
     u = st.session_state.user or {}
-    st.markdown(f'<div class="tb"><div class="lg">🔐 SecureFileShare</div><div style="font-size:.82rem;color:var(--t2)"><span style="color:var(--green)">●</span>&nbsp;<b style="color:var(--t1)">{u.get("username","")}</b>&nbsp;&nbsp;<span class="b bp">{u.get("plan","free").upper()}</span></div></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="tb"><div class="lg">🔐 ILFUS</div><div style="font-size:.82rem;color:var(--t2)"><span style="color:var(--green)">●</span>&nbsp;<b style="color:var(--t1)">{u.get("username","")}</b>&nbsp;&nbsp;<span class="b bp">{u.get("plan","free").upper()}</span></div></div>', unsafe_allow_html=True)
 
 
 # ─── SIDEBAR ──────────────────────────────────────────────────────────────────
 def render_sidebar():
     with st.sidebar:
-        st.markdown('<div class="lg" style="font-size:1.1rem;padding:.4rem 0">🔐 SecureFileShare</div>', unsafe_allow_html=True)
+        st.markdown('<div class="lg" style="font-size:1.1rem;padding:.4rem 0">🔐 ILFUS</div>', unsafe_allow_html=True)
         st.divider()
 
         menu_items = ["Dashboard", "My Files", "Upload", "Share File", "Shared With Me", "Audit Trail", "File Integrity", "Analytics", "Blockchain", "Notifications", "Settings"]
