@@ -1,5 +1,5 @@
 """
-SecureFileShare — FastAPI Backend  (v2.0)
+ILFUS — FastAPI Backend  (v2.0)
 Full-featured REST API for blockchain-based file storage.
 Uses SQLite for zero-config local development.
 """
@@ -35,7 +35,7 @@ UPLOAD_DIR = Path(__file__).parent / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 DB_PATH = Path(__file__).parent / "secureshare.db"
 
-app = FastAPI(title="SecureFileShare API", version="2.0.0")
+app = FastAPI(title="ILFUS API", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -296,7 +296,7 @@ def register(req: RegisterRequest):
     user = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
 
     # Welcome notification
-    create_notification(conn, user_id, "welcome", "Welcome to SecureFileShare! 🎉",
+    create_notification(conn, user_id, "welcome", "Welcome to ILFUS! 🎉",
                        f"Hello {req.username}! Your blockchain wallet is connected and ready.")
     conn.commit()
     conn.close()
@@ -1065,14 +1065,14 @@ def system_stats(user_id: str = Depends(get_current_user_id)):
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "version": "2.0.0", "service": "SecureFileShare API"}
+    return {"status": "ok", "version": "2.0.0", "service": "ILFUS API"}
 
 
 # ─── MAIN ────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     port = int(os.getenv("API_PORT", "8000"))
-    print(f"\n  [SecureFileShare API v2.0]")
+    print(f"\n  [ILFUS API v2.0]")
     print(f"  |-- Listening on http://0.0.0.0:{port}")
     print(f"  |-- Database: {DB_PATH}")
     print(f"  +-- Uploads:  {UPLOAD_DIR}\n")
